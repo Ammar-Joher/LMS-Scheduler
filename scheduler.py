@@ -16,7 +16,7 @@ def send_notification_mail(cursor, manager_id, employee_name, manager_type):
     elif manager_type == 'senior manager':
         get_email_query = "SELECT id, first_name, last_name, email FROM public.auth_user WHERE id=1;"
 
-    sg = sendgrid.SendGridAPIClient('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')
+    sg = sendgrid.SendGridAPIClient('API-Key')
 
     cursor.execute(get_email_query)
     user_records = cursor.fetchall()
